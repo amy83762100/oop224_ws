@@ -1,0 +1,15 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+// 
+// Workshop 1-DIY:
+// Version: 1.0
+// Date: 2021/05/26
+// Name: Pei-Yi Lin
+// Email: plin24@myseneca.ca
+// Student ID: 123423204
+//
+///////////////////////////////////////////////////
+In this workshop, I think coding the char* strStr(const char* str1, const char* str2) function is the most challenging part. This function will try to find the first occurrence of the substring str2 in str1, then return the char pointer. If str2 is not a part of str1, it will return a null pointer.
+
+Based on the knowledge I learned from IPC144, I know that I can't directly return a char array because once we've finished executing this function, the function's local variable is gone. Therefore, I decided to allocate dynamic memory for the char array (char* str =  new char[80];), so in this way, the variable is created in heap, not stack.However, since I need to return the variable "str" so I can't deallocate the memory before the end of the function, which leads to a memory leak. 
+
+Therefore, in the end, I decide to use the static keyword (static char str[80];). In this way, the memory is not gonna get destroyed until the whole program is terminated.
