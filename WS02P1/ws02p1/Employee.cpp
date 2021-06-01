@@ -26,9 +26,11 @@ namespace sdds {
    // TODO: Finish the implementation of the 1 arg load function which
    // reads one employee record from the file and loads it into the employee reference
    // argument
-   bool load(...............) {
+   bool load(Employee &employee) {
       bool ok = false;
       char name[128];
+      int number;
+      double salary;
       /* if reading of employee number, salay and name are successful
               allocate memory to the size of the name + 1
               and keep its address in the name of the Employee Reference
@@ -38,6 +40,13 @@ namespace sdds {
               make sure the "ok" flag is set to true
          end if
       */
+      if (read(number) && read(salary) && read(name)) {
+          employee.m_name = new char[strLen(name) + 1];
+          strCpy(employee.m_name, name);
+          employee.m_empNo = number;
+          employee.m_salary = salary;
+          ok = true;
+      }
       return ok;
    }
    // TODO: Finish the implementation of the 0 arg load function 
@@ -62,6 +71,21 @@ namespace sdds {
 
           close the file
           */
+          noOfEmployees = noOfRecords();
+          employees = new Employee[noOfEmployees];
+          while (i < noOfEmployees)
+          {
+              load(employees[i]);
+              i++;
+          }
+          if (noOfEmployees!=i) {
+              cout << "Error: incorrect number of records read; the data is possibly corrupted" << endl;
+          }
+          else
+          {
+               ok = true;
+          }
+          closeFile();
       }
       else {
          cout << "Could not open data file: " << DATAFILE<< endl;
@@ -70,10 +94,27 @@ namespace sdds {
    }
 
    // TODO: Implementation for the display functions go here
+   void display(const Employee &employee) {
+       cout << employee.m_empNo << ": " << employee.m_name << ", " << employee.m_salary << endl;
+   }
+   void display() {
+       cout << "Employee Salary report, sorted by employee number"<< endl;
+       cout << "no- Empno, Name, Salary"<< endl;
+       cout << "------------------------------------------------"<< endl;
+       sort();
+       for (int i = 0; i < noOfEmployees; i++) {
+           cout << (i+1)<<"- ";
+           display(employees[i]);
+       }
 
-
+   }
    // TODO: Implementation for the deallocateMemory function goes here
-
-
-
+   void deallocateMemory(){
+       for (int i = 0; i < noOfEmployees; i++) {
+           delete[] employees[i].m_name;
+           employees[i].m_name = nullptr;
+       }
+       delete[] employees;
+       employees = nullptr;
+   }
 }
