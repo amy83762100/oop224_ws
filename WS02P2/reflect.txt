@@ -1,0 +1,13 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+// 
+// Workshop 2-DIY:
+// Version: 1.0
+// Date: 2021/06/02
+// Name: Pei-Yi Lin
+// Email: plin24@myseneca.ca
+// Student ID: 123423204
+//
+///////////////////////////////////////////////////
+This workshop helps me get a better understanding of overloading, references, and dynamic memory. In the File module, the read() function has multiple meanings, and this kind of function is called the overload function. We overload the read() function by changing its signature. (the functions have the same identifier "read" and different types of parameters. ) In the DIY part, I still follow the first part structure, use two overloads function called read to read the record of postal code and population. 
+
+The dynamic memory can let our program become more agile. The memory requirements depend on problem size, so we sometimes don't know how much memory we need to allocate at compile-time. The dynamic memory can be a lifesaver in this situation. For instance, in the Population module, I use the keyword new[] allocates a dynamic memory that is equal to the number of records. In this way, the program is not limited to only accept a particular size range of files.

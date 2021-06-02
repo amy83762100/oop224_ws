@@ -20,5 +20,10 @@ namespace sdds {
    void closeFile() {
       if (fptr) fclose(fptr);
    }
-
+   bool read(char* postalCode) {
+       return fscanf(fptr, "%[^,],", postalCode) == 1;
+   }
+   bool read(int& population) {
+       return fscanf(fptr, "%d\n", &population) == 1;
+   }
 }
