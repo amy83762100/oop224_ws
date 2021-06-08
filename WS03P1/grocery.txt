@@ -60,7 +60,7 @@ Hot Dog Buns	2.97	0
 Hot Dogs, beef	6.87	0
 Ice Cream, premium	7.47	1
 Ice Cream, simple	5.97	1
-Jalopeño Peppers, canned	3.57	0
+Jalope?o Peppers, canned	3.57	0
 Ketchup	4.47	1
 Kielbasa	5.97	0
 Lemons	5.97	0
@@ -97,7 +97,7 @@ Plastic Wrap	4.47	1
 Pork Tenderloin, small	11.97	0
 Potatoes, gold (Yukon)	8.97	0
 Potatoes, red	7.47	0
-Potatoes, Russet 	8.67	0
+Potatoes, Russet?	8.67	0
 Preserves, strawberry	4.77	0
 Pretzels	3.87	1
 Ribs, Baby Back (pork, unseasoned)	10.47	0
