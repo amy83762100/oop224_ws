@@ -1,0 +1,14 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+// 
+// Workshop 3-DIY:
+// Version: 1.0
+// Date: 2021/06/08
+// Name: Pei-Yi Lin
+// Email: plin24@myseneca.ca
+// Student ID: 123423204
+//
+///////////////////////////////////////////////////
+
+After finishing these few workshops, I now have a better understanding of object-oriented programming. In this workshop, we use class encapsulation to prevent the variable from being accidentally modified by the client. This structure helps us hide all the implementation details from its clients and creates a clean interface. As we can see, in the calListTester.cpp file, the only four functions we use are init(), add(), display(), and deallocate(). Those functions are straightforward and easy to understand, which makes our program very clear and maintainable. It's just like packing the implementation details into the building blocks, and then we can use those building blocks to build more huge and complicated stuff.
+
+In this workshop, I also learn how to use some of iostream member functions such as width(), fill(), setf(), unsetf(), and precision() to format the output content. I was a little confused and wondered why the precision() function did not work in the way I expected. After some search, I realize that the precision field specifies the maximum number of meaningful digits to display both before and after the decimal point on the default. And in fixed notations, the precision field specifies exactly how many digits to display after the decimal point.

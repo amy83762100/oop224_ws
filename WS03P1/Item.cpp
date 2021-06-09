@@ -25,7 +25,7 @@ namespace sdds {
     }
     double Item::tax()const {
         const double taxRate = 0.13;
-        if (m_taxed) return m_price * 0.13;
+        if (m_taxed) return m_price * taxRate;
         else return 0.0;
     }
     bool Item::isValid()const {
