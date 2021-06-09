@@ -1,11 +1,13 @@
-// Workshop 3: 
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+// 
+// Workshop 3-DIY:
 // Version: 1.0
-// Date: 2021-06-03
-// Author: Fardad Soleimanloo
-// Description:
-// This file tests the DIY section of your workshop
-// Do not modify this code when submitting
-/////////////////////////////////////////////
+// Date: 2021/06/08
+// Name: Pei-Yi Lin
+// Email: plin24@myseneca.ca
+// Student ID: 123423204
+//
+///////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstdio>
@@ -47,7 +49,7 @@ int main() {
    }
    CL.display();
    CL.deallocate();
-   //testDMA(CL); // uncommnet to test DMA
+   testDMA(CL); // uncommnet to test DMA
    return 0;
 }
 
