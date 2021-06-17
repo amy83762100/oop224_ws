@@ -45,7 +45,7 @@ namespace sdds {
 			cout.unsetf(ios::right);
 		}
 		else cout << "|    Invalid Calorie Consumption list                |" << endl;
-		cout << "+--------------------------------+------+------------+" << endl;
+		cout << "+----------------------------------------------------+" << endl;
 	}
 	void CalorieList::init(int noOfItems) {
 		bool valid = noOfItems > 0;
