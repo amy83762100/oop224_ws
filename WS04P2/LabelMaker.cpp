@@ -11,12 +11,12 @@ namespace sdds {
     void LabelMaker::readLabels(){
         cout << "Enter " << l_noOfLabels << " labels:" << endl;
         for (int i = 0; i < l_noOfLabels; i++) {
-            cout << "Enter label number " << i+1 << endl;
+            cout << "Enter label number " << i+1 << endl << "> ";
             l_labels[i].readLabel();
         }
     }
     void LabelMaker::printLabels(){
-        for (int i = 0; i < l_noOfLabels; i++) l_labels[i].printLabel();
+        for (int i = 0; i < l_noOfLabels; i++) l_labels[i].printLabel() << endl;;
     }
     LabelMaker::~LabelMaker(){
         delete [] l_labels;
