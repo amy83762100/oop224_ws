@@ -5,7 +5,6 @@ using namespace std;
 namespace sdds {
     LabelMaker::LabelMaker(int noOfLabels){
         l_noOfLabels = noOfLabels;
-        delete[] l_labels;
         l_labels = nullptr;
         l_labels = new Label[noOfLabels];
     }
@@ -20,7 +19,7 @@ namespace sdds {
         for (int i = 0; i < l_noOfLabels; i++) l_labels[i].printLabel();
     }
     LabelMaker::~LabelMaker(){
-        delete[] l_labels;
+        delete [] l_labels;
         l_labels = nullptr;
     }
 }
