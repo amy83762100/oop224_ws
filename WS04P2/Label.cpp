@@ -10,7 +10,6 @@ namespace sdds {
     }
     void Label::setContent(const char* Cstr) {
         if (Cstr != nullptr) {
-            delete[] l_content;
             l_content = nullptr;
             l_content = new char[strLen(Cstr) + 1];
             strCpy(l_content, Cstr);
@@ -30,7 +29,7 @@ namespace sdds {
         setContent(content);
     }
     Label::~Label(){
-        delete[] l_content;
+        delete [] l_content;
         l_content = nullptr;
     }
     void Label::readLabel(){
