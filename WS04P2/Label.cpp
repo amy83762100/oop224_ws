@@ -33,8 +33,8 @@ namespace sdds {
         l_content = nullptr;
     }
     void Label::readLabel(){
-        char content[70];
-        cin.getline(content, 70);
+        char content[71];
+        cin.getline(content, 71);
         setContent(content);
     }
     std::ostream& Label::printLabel()const{
