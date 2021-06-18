@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <ostream>
-#include "labelMaker.h"
+#include "LabelMaker.h"
 using namespace std;
 namespace sdds {
     LabelMaker::LabelMaker(int noOfLabels){

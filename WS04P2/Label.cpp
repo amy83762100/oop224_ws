@@ -2,7 +2,7 @@
 #include <istream>
 #include <iomanip>
 #include "cstring.h"
-#include "label.h"
+#include "Label.h"
 using namespace std;
 namespace sdds {
     void Label::setToDefault() {
