@@ -1,0 +1,14 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+// 
+// Workshop 4-DIY:
+// Version: 1.0
+// Date: 2021/06/18
+// Name: Pei-Yi Lin
+// Email: plin24@myseneca.ca
+// Student ID: 123423204
+//
+///////////////////////////////////////////////////
+
+I feel that compared to previous workshops, this one is relatively difficult than before. I guess it is because I did not thoroughly understand the concept of the constructor function when I was doing the workshop. Thankfully, after finish this workshop I now have a better understanding of constructor. The constructor function is just like an automatic initializer which will be invoked at the moment that the object is created.  Without this process, an object's member function may be called before initialization, which could cause the whole program to crash. 
+
+In the DIY part, I overload three constructor functions. The first one is "No argument Constructor" which sets the frame and the content to their default values. The second one is "One argument Constructor" which sets the content to their default values and sets the frame to the argument value. The third one is "Two argument Constructor" which sets the frame and the content to the corresponding argument values.
