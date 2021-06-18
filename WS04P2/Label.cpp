@@ -44,7 +44,7 @@ namespace sdds {
             cout << l_frame[7] << setfill(' ') << setw(len) << l_frame[3] << endl;
             cout << l_frame[7] << ' ' << l_content << ' ' << l_frame[3] << endl;
             cout << l_frame[7] << setfill(' ') << setw(len) << l_frame[3] << endl;
-            cout << l_frame[6] << setfill(l_frame[5]) << setw(len) << l_frame[4] << endl;
+            cout << l_frame[6] << setfill(l_frame[5]) << setw(len) << l_frame[4];
         }
         return cout;
     }
