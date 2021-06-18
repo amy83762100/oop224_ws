@@ -1,6 +1,6 @@
 #ifndef LABELMAKER_H
 #define LABELMAKER_H
-#include "label.h"
+#include "Label.h"
 namespace sdds {
     class LabelMaker {
         int l_noOfLabels;
