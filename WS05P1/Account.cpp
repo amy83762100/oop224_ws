@@ -97,6 +97,6 @@ namespace sdds {
        return (m_number > 0 && acc.m_number > 0) ? m_balance + acc.m_balance : 0;
    }
    double operator+=(double& sum, const Account& acc) {
-       return sum+=acc.m_balance;
+       return sum+= double(acc);
    }
 }
