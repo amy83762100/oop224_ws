@@ -22,7 +22,7 @@ namespace sdds {
       Account& operator<<(Account& acc);
       Account& operator>>(Account& acc);
       double operator+(const Account& acc) const;
-      friend double operator+=(double& sum, const Account& acc);
    };
+   double operator+=(double&, const Account&);
 }
 #endif // SDDS_ACCOUNT_H_
