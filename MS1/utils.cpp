@@ -63,7 +63,7 @@ namespace sdds {
            strcpy(s, str.c_str());
            if (!isdigit(s[0])) cout << "Bad integer value, try again: ";
            else {
-               for (int i = 0; i < str.length(); i++) {
+               for (int i = 0; (unsigned) i < str.length(); i++) {
                    if (!isdigit(s[i])) isDigit = false;
                }
                if (!isDigit) cout << "Enter only an integer, try again: ";
