@@ -14,8 +14,8 @@ void getIntTester();
 void timeTester();
 void getcstrTester();
 int main() {
-   //getIntTester();
-   //getcstrTester();
+   getIntTester();
+   getcstrTester();
    timeTester();
    return 0;
 }
