@@ -58,7 +58,7 @@ namespace sdds {
 		return *this;
 	}
 	Time Time::operator - (const Time & D)const {
-		int min = m_min;
+		unsigned int min = m_min;
 		while (min < D.m_min)
 		{
 			min += (24 * 60);
