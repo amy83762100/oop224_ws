@@ -37,7 +37,7 @@ namespace sdds {
 	}
 	void Menu::display()const {
 		cout << m_text << endl;
-		cout << "0 - Exit" << endl;
+		cout << "0- Exit" << endl;
 	}
 	int& Menu::operator>>(int& Selection) {
 		display();
