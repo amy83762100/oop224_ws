@@ -1,34 +1,34 @@
-// IOAble Tester:
-// Version: 1.0
-// Date: 2021-06-23
-// Author: Fardad Soleimanloo
-// Description:
-// This file tests the IOAble Module of your project
+// ioable tester:
+// version: 1.0
+// date: 2021-06-23
+// author: fardad soleimanloo
+// description:
+// this file tests the ioable module of your project
 /////////////////////////////////////////////
 
 #include <iostream>
 #include <fstream>
-#include "IOAble.h"
+#include "ioable.h"
 using namespace std;
 using namespace sdds;
-void displayFile(const char* filename) {
+void displayfile(const char* filename) {
    ifstream file(filename);
    cout << filename << "---------------------" << endl;
    char ch;
    while (file.get(ch) && cout << ch);
    cout << "---------------------------------" << endl;
 }
-class Box :public IOAble {
+class box :public ioable {
    int m_hieght, m_width;
 public:
    bool csv;
-   Box() :m_hieght(0), m_width(0), csv(false) {
-      cout << "defaulting Box" << endl;
+   box() :m_hieght(0), m_width(0), csv(false) {
+      cout << "defaulting box" << endl;
    };
-   ostream& csvWrite(std::ostream& ostr)const {
+   ostream& csvwrite(std::ostream& ostr)const {
       return ostr << m_hieght << "," << m_width;
    }
-   istream& csvRead(std::istream& istr) {
+   istream& csvread(std::istream& istr) {
       istr >> m_hieght;
       istr.ignore();
       istr >> m_width;
@@ -37,7 +37,7 @@ public:
    }
    ostream& write(ostream& ostr)const {
       if (csv) {
-         csvWrite(ostr);
+         csvwrite(ostr);
       }
       else {
          int i;
@@ -50,66 +50,66 @@ public:
    }
    istream& read(istream& istr) {
       if (csv) {
-         csvRead(istr);
+         csvread(istr);
       }
       else {
-         cout << "Height: ";
+         cout << "height: ";
          istr >> m_hieght;
-         cout << "Width: ";
+         cout << "width: ";
          istr >> m_width;
       }
       return istr;
    }
-   ~Box() {
-      cout << "Box(" << m_hieght << "," << m_width  << ") is gone!" << endl;
+   ~box() {
+      cout << "box(" << m_hieght << "," << m_width  << ") is gone!" << endl;
    }
 };
 int main() {
-   Box B;
-   cout << "Getting information of an IOAble box from console: " << endl;
-   cin >> B;
-   cout << "Display the IOAble box on console: " << endl;
-   cout << B << endl;
-   B.csv = false;
+   box b;
+   cout << "getting information of an ioable box from console: " << endl;
+   cin >> b;
+   cout << "display the ioable box on console: " << endl;
+   cout << b << endl;
+   b.csv = false;
    ifstream fboxes("boxes.txt");
    if (fboxes) {
-      Box* Bp;
-      ofstream bout("boxesOut.txt");
-      B.csv = true;
-      cout << "Saving " << B << " in the output file." << endl;
-      bout << B << endl;
-      cout << "Dynamically allocating a Box and holding it in an IOAble pointer..." << endl;
-      IOAble* iop = Bp = new Box();
-      cout << "Reading dimenstions from file using the IOAlbe pointer" << endl;;
-      Bp->csv = true;
+      box* bp;
+      ofstream bout("boxesout.txt");
+      b.csv = true;
+      cout << "saving " << b << " in the output file." << endl;
+      bout << b << endl;
+      cout << "dynamically allocating a box and holding it in an ioable pointer..." << endl;
+      ioable* iop = bp = new box();
+      cout << "reading dimenstions from file using the ioalbe pointer" << endl;;
+      bp->csv = true;
       fboxes >> *iop;
-      cout << "Dimentions: " << endl;
+      cout << "dimentions: " << endl;
       cout << *iop << endl;
-      Bp->csv = false;
-      cout << "What it looks like on screen:" << endl << *iop << endl;
-      Bp->csv = true;
-      cout << "Now save it in the file..." << endl;
+      bp->csv = false;
+      cout << "what it looks like on screen:" << endl << *iop << endl;
+      bp->csv = true;
+      cout << "now save it in the file..." << endl;
       bout << *iop << endl;
-      cout << "Reading the next dimenstions from file using the IOAble pointer" << endl;;
+      cout << "reading the next dimenstions from file using the ioable pointer" << endl;;
       fboxes >> *iop;
-      cout << "Dimentions: " << endl;
+      cout << "dimentions: " << endl;
       cout << *iop << endl;
-      Bp->csv = false;
-      cout << "What it looks like on screen:" << endl << *iop << endl;
-      Bp->csv = true;
-      cout << "Save this one in the output file too..." << endl;
+      bp->csv = false;
+      cout << "what it looks like on screen:" << endl << *iop << endl;
+      bp->csv = true;
+      cout << "save this one in the output file too..." << endl;
       bout << *iop << endl;
-      cout << "Close the file and display it..." << endl;
+      cout << "close the file and display it..." << endl;
       bout.close();
-      displayFile("boxesOut.txt");
-      cout << "Removing the box from memory using the IOAble pointer..." << endl;
-      delete Bp;
+      displayfile("boxesout.txt");
+      cout << "removing the box from memory using the ioable pointer..." << endl;
+      delete bp;
       bout.close();
    }
    else {
-      cout << "Could not find the file \"boxes.txt\"." << endl;
+      cout << "could not find the file \"boxes.txt\"." << endl;
    }
-   cout << "Content of \"boxesOut.txt\" file" << endl;
-   displayFile("boxesOut.txt");
+   cout << "content of \"boxesout.txt\" file" << endl;
+   displayfile("boxesout.txt");
    return 0;
 }
