@@ -62,7 +62,7 @@ namespace sdds {
 	ostream& Patient::write(ostream& ostr) const {
 		m_ticket.write(ostr);
 		ostr << endl;
-		for (int i = 0; i < 25 && i < m_name[i] != '\0'; i++) ostr << m_name[i];
+		for (int i = 0; i < 25 && m_name[i] != '\0'; i++) ostr << m_name[i];
 		return ostr	<< ", OHIP: " << m_OHIPnumber;
 	}
 	istream& Patient::read(istream& istr) {
