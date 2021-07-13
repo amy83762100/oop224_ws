@@ -94,8 +94,10 @@ namespace sdds {
        string str;
        if (prompt != nullptr) cout << prompt;
        getline(istr, str, delimiter);
-       s = new char[str.length() + 1];
+       int len = str.length();
+       s = new char[len + 1];
        strcpy(s, str.c_str());
+       str[len] = '\0';
        return s;
    }
 }

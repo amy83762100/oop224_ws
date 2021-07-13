@@ -21,10 +21,11 @@ using namespace std;
 namespace sdds {
 	Patient::Patient(int ticketNumber, bool fileIO):m_ticket((ticketNumber)){
 		m_fileIO = fileIO;
+		m_name = nullptr;
+		m_OHIPnumber = 0;
 	}
 	Patient::~Patient() {
 		delete[] m_name;
-		m_name = nullptr;
 	}
 	bool Patient::fileIO() const {
 		return m_fileIO;
@@ -53,9 +54,12 @@ namespace sdds {
 		return ostr;
 	}
 	istream& Patient::csvRead(istream& istr) {
+		string str;
+		getline(istr, str,',');
 		delete[] m_name;
-		m_name = nullptr;
-		m_name = getcstr("", istr, ',');
+		m_name = new char[str.length() + 1];
+		strcpy(m_name, str.c_str());
+		// m_name = getcstr("", istr, ',');
 		istr >> m_OHIPnumber;
 		istr.ignore();
 		m_ticket.csvRead(istr);
@@ -68,10 +72,14 @@ namespace sdds {
 		return ostr	<< ", OHIP: " << m_OHIPnumber;
 	}
 	istream& Patient::read(istream& istr) {
+		string str;
+		cout << "Name: ";
+		getline(istr, str);
 		delete[] m_name;
-		m_name = nullptr;
-		m_name = getcstr("Name: ", istr, '\n');
-		m_OHIPnumber = getInt(100000000, 999999999, "OHIP: ", "Invalid OHIP Number,", true);
+		m_name = new char[str.length() + 1];
+		strcpy(m_name, str.c_str());
+		// m_name = getcstr("Name: ", istr, '\n');
+		m_OHIPnumber = getInt(100000000, 999999999, "OHIP:", "Invalid OHIP Number, ", true);
 		return istr;
 	}
 }
