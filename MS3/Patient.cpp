@@ -53,6 +53,8 @@ namespace sdds {
 		return ostr;
 	}
 	istream& Patient::csvRead(istream& istr) {
+		delete[] m_name;
+		m_name = nullptr;
 		m_name = getcstr("", istr, ',');
 		istr >> m_OHIPnumber;
 		istr.ignore();
@@ -66,6 +68,8 @@ namespace sdds {
 		return ostr	<< ", OHIP: " << m_OHIPnumber;
 	}
 	istream& Patient::read(istream& istr) {
+		delete[] m_name;
+		m_name = nullptr;
 		m_name = getcstr("Name: ", istr, '\n');
 		m_OHIPnumber = getInt(100000000, 999999999, "OHIP: ", "Invalid OHIP Number,", true);
 		return istr;
