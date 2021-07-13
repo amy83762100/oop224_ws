@@ -5,6 +5,9 @@
 // Description:
 // This file tests the Patient Module of your project
 /////////////////////////////////////////////
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -88,6 +91,7 @@ int main() {
    p->fileIO(false);
    testOperatorsCastAndNumber(W, *p);
    delete p;
+   _CrtDumpMemoryLeaks();
    return 0;
 }
 void testOperatorsCastAndNumber(const Patient& A, const Patient& B) {
