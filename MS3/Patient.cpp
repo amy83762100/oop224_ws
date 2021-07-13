@@ -15,6 +15,7 @@ that my professor provided to complete my workshops and assignments.
 -----------------------------------------------------------*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <string>
+#include <cstring>
 #include "Patient.h"
 #include "utils.h"
 using namespace std;
