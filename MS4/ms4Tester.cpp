@@ -7,9 +7,9 @@
 // This file tests the CovidPatient and TriagePatient
 // Modules of your project
 /////////////////////////////////////////////
-#define _CRTDBG_MAP_ALLOC
-#include <stdlib.h>
-#include <crtdbg.h>
+//#define _CRTDBG_MAP_ALLOC
+//#include <stdlib.h>
+//#include <crtdbg.h>
 
 #include <iostream>
 using namespace std;
@@ -146,5 +146,5 @@ void TPTest() {
    cout << "Patient information entered:" << endl;
    cout << C << endl;
 
-   _CrtDumpMemoryLeaks();
+   // _CrtDumpMemoryLeaks();
 }
