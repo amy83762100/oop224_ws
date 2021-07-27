@@ -41,7 +41,7 @@ namespace sdds {
 		if (csvfile.is_open()) {
 			csvfile << m_averCovidWait << ',' << m_averTriageWait << endl;
 			for (int i = 0; i < m_lineupSize; i++) {
-				cout << i + 1 << " - ";
+				cout << i + 1 << "- ";
 				m_lineup[i]->csvWrite(cout);
 				cout << endl;
 				m_lineup[i]->csvWrite(csvfile);
