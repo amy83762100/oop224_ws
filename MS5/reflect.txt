@@ -1,0 +1,24 @@
+/* Citation and Sources...
+Final Project Milestone 5
+Author Pei-Yi Lin
+Revision History
+-----------------------------------------------------------
+Date      Reason
+2021/7/27  Preliminary release
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------
+-----------------------------------------------------------*/
+After finishing the final project, I not only get a better understanding of C++ but also more familiar with memory allocation, which let me know how to prevent memory leaks. 
+
+For instance, in PreTriage Destructor we have to delete all the Patients pointed by the elements of the m_lineup array; in the beginning, I tried to use "delete [] m_lineup" to free the memory, but it causes the runtime error. I read the course note again and also watch some tutorial videos about memory allocation. Then I realize "m_lineup" isn't a pointer to a dynamically allocated array, it is an array of pointers. Therefore, it will be destroyed automatically when the class instance is destroyed.  The correct method is as below:
+for (int i = 0; i < maxNoOfPatients; i++)
+{
+	delete m_lineup[i]; 	// delete the CovidPatient/TriagePatient object allocations.
+}
+
+To sum up, the memories that need to be free are the those allocated in reg() function which is:
+if (selection == 1) m_lineup[m_lineupSize] = new CovidPatient;
+if (selection == 2) m_lineup[m_lineupSize] = new TriagePatient;
+And according to the course note, we know that for "new" we should use "delete". For "new[]" use "delete[]".
