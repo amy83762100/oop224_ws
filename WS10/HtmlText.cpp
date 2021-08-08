@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////
 #define _CRT_SECURE_NO_WARNINGS
 #include <fstream>
-#include <cstring>
+#include "cstring"
 #include "HtmlText.h"
 using namespace std;
 namespace sdds {
