@@ -1,0 +1,16 @@
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+// 
+// Workshop 10:
+// Version: 1.0
+// Date: 2021/08/07
+// Name: Pei-Yi Lin
+// Email: plin24@myseneca.ca
+// Student ID: 123423204
+//
+///////////////////////////////////////////////////
+
+After finish this Workshop, I now have a better understanding of the "rule of three." 
+
+In the beginning, I didn't understand how to copy and assign the basic class in the derived class. When I first time test my code, I realize that the "m_content" and "m_filename" class members of the "H3" object are point to a "nullptr", which means the "H2" object assign only the derived class content to the "H3" object. 
+
+To solve this problem, I add the basic class's assign operator - "Text::operator=(source);" to the function. 
