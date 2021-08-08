@@ -18,6 +18,7 @@ namespace sdds {
       HtmlText(const char* filename=nullptr, const char* title = nullptr);
       HtmlText(const HtmlText& source);
       HtmlText& operator=(const HtmlText& source);
+      ~HtmlText();
       void init(const HtmlText& source);
       void write(std::ostream& os)const;
    };

@@ -31,6 +31,9 @@ namespace sdds {
 		}
 		return *this;
 	}
+	HtmlText::~HtmlText() {
+		delete[] m_title;
+	}
 	void HtmlText::init(const HtmlText& source) {
 		if (source.m_title) {
 			m_title = new char[strlen(source.m_title) + 1];
